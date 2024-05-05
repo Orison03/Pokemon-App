@@ -29,7 +29,7 @@ export default function Home() {
           think of.{" "}
         </p>
         {/* search bar */}
-        <div className="flex justify-between border-2 rounded-[30px] py-2 bg-white pr-[9px] pl-[20px] mt-16 border-[#DE527F] w-[338px] lg:w-[536px] mx-auto">
+        <div className="flex justify-between border-2 rounded-[30px] py-2 bg-white pr-[9px] pl-[20px] mt-16 border-[#DE527F] w-[340px] lg:w-[536px] mx-auto">
           <input
             type="text"
             placeholder="Enter pokemon name"
