@@ -61,7 +61,7 @@ export const Card = ({
                 value="about"
                 className="text-center font-description"
               >
-                <Separator className="w-[428px] mx-auto" />
+                <Separator className="md:w-[428px] mx-auto" />
                 <h2 className="font-description font-semibold text-2xl pt-2">
                   About
                 </h2>
@@ -91,6 +91,7 @@ export const Card = ({
                 value="stats"
                 className="text-center font-description"
               >
+                <Separator className="md:w-[428px] mx-auto" />
                 <h2 className="font-description font-semibold text-2xl pt-2">
                   Stats
                 </h2>
@@ -113,6 +114,7 @@ export const Card = ({
                 value="similar"
                 className="text-center font-description"
               >
+                <Separator className="md:w-[428px] mx-auto" />
                 <h2 className="font-description font-semibold text-2xl pt-2">
                   Similar
                 </h2>

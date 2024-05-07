@@ -1,6 +1,18 @@
 import { Link } from "react-router-dom";
 import pokemonLogo from "../assets/pokemon-logo.png";
 import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "@/components/ui/alert-dialog";
+
+import {
   ChevronLeft,
   ChevronRight,
   Ellipsis,
@@ -185,9 +197,26 @@ const ListView: React.FC = () => {
           />
         </div>
         {/* theme component */}
-        <div className="w-8 h-8 lg:w-12 lg:h-12 border border-[#868686] rounded-full flex items-center justify-center">
-          <div className="w-6 h-6 lg:w-8 lg:h-8 bg-[#E85382] rounded-full"></div>
-        </div>
+        <AlertDialog>
+          <AlertDialogTrigger>
+            <div className="w-8 h-8 lg:w-12 lg:h-12 border border-[#868686] rounded-full flex items-center justify-center">
+              <div className="w-6 h-6 lg:w-8 lg:h-8 bg-[#E85382] rounded-full"></div>
+            </div>
+          </AlertDialogTrigger>
+          <AlertDialogContent>
+            <AlertDialogHeader>
+              <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
+              <AlertDialogDescription>
+                This action cannot be undone. This will permanently delete your
+                account and remove your data from our servers.
+              </AlertDialogDescription>
+            </AlertDialogHeader>
+            <AlertDialogFooter>
+              <AlertDialogCancel>Cancel</AlertDialogCancel>
+              <AlertDialogAction>Continue</AlertDialogAction>
+            </AlertDialogFooter>
+          </AlertDialogContent>
+        </AlertDialog>
       </nav>
 
       <div className="pt-24 pb-16 px-10">
