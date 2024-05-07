@@ -65,7 +65,7 @@ export const Card = ({
                 <h2 className="font-description font-semibold text-2xl pt-2">
                   About
                 </h2>
-                <div className="space-y-4 flex flex-col py-3 mt-3 mb-20 bg-gradient-to-r from-[#D9D9D9] to-[#D9D9D9]/30 w-[428px] mx-auto">
+                <div className="space-y-4 flex flex-col py-3 mt-3 mb-20 bg-gradient-to-r from-[#D9D9D9] to-[#D9D9D9]/30 md:w-[428px] mx-auto">
                   <p className="font-normal text-xl border-b border-[#D9D9D9] py-3">
                     Height : <span className="font-semibold">{height}m</span>
                   </p>
@@ -94,11 +94,11 @@ export const Card = ({
                 <h2 className="font-description font-semibold text-2xl pt-2">
                   Stats
                 </h2>
-                <div className="space-y-4 flex flex-col py-3 mt-3 mb-20 bg-gradient-to-r from-[#D9D9D9] to-[#D9D9D9]/30 w-[428px] mx-auto">
+                <div className="space-y-4 flex flex-col py-3 mt-3 mb-20 bg-gradient-to-r from-[#D9D9D9] to-[#D9D9D9]/30 md:w-[428px] mx-auto">
                   {stats.map((stat: any, index: any) => (
                     <p
                       key={index}
-                      className="font-normal text-xl border-b border-[#D9D9D9] py-3 flex items-center justify-between space-x-3 text-nowrap px-4"
+                      className="font-normal max-sm:text-lg text-xl border-b border-[#D9D9D9] py-3 flex items-center justify-between space-x-3 text-nowrap px-4"
                     >
                       <span>{stat.stat.name.toUpperCase()}</span>
                       <Progress value={(stat.base_stat / 255) * 100} />
