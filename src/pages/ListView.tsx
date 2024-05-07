@@ -32,10 +32,6 @@ interface Pokemon {
   weight: number;
   abilities: Ability[];
   stats: Stat[];
-  species: {
-    name: string;
-    url: string;
-  };
 }
 
 interface Ability {
@@ -209,7 +205,6 @@ const ListView: React.FC = () => {
                   weight={pokemon.weight}
                   abilities={pokemon.abilities}
                   stats={pokemon.stats}
-                  spices={pokemon.species.name}
                 />
               </section>
             ))}
