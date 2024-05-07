@@ -172,9 +172,9 @@ const ListView: React.FC = () => {
             </div>
           </Link>
         </div>
-        <div className="flex space-x-3 border shadow-sm rounded-[30px] pl-3 py-3 pr-8 md:pl-[20px] border-[#E1E1E1] w-auto h-auto lg:lg:w-[440px] items-center">
-          <div className="md:w-[24px] md:h-24px">
-            <Search className="w-full text-[#E1E1E1]" />
+        <div className="flex space-x-3 border shadow-sm rounded-[30px] pl-3 py-3 pr-8 md:pl-[20px] border-[#E1E1E1] w-fit h-auto lg:lg:w-[440px] items-center">
+          <div className="lg:w-[24px] lg:h-24px">
+            <Search className="text-[#E1E1E1]" />
           </div>
           <input
             type="text"
@@ -184,6 +184,7 @@ const ListView: React.FC = () => {
             className="font-description max-sm:text-sm text-lg flex-grow bg-transparent focus:outline-none"
           />
         </div>
+        {/* theme component */}
         <div className="w-8 h-8 lg:w-12 lg:h-12 border border-[#868686] rounded-full flex items-center justify-center">
           <div className="w-6 h-6 lg:w-8 lg:h-8 bg-[#E85382] rounded-full"></div>
         </div>
