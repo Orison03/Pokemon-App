@@ -42,7 +42,7 @@ export const Card = ({
             </div>
           </div>
         </SheetTrigger>
-        <SheetContent className="bg-[#FFFFFF] border-none w-full overflow-y-auto">
+        <SheetContent className="bg-[#FFFFFF] border-none w-full overflow-y-scroll">
           {/* dominant color not working for me :( */}
           <div className="bg-gradient-to-r from-cyan-500 to-blue-500 w-full flex justify-center items-center rounded-[15px] relative">
             <img
