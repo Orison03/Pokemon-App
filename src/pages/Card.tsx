@@ -78,13 +78,15 @@ export const Card = ({
                   </p>
                   <p className="font-normal text-xl flex justify-center space-x-1 py-3">
                     Abilities :
-                    {abilities.map((ability: any, index: any) => (
-                      <ul key={index} className="font-semibold">
-                        {" "}
-                        {ability.ability.name}
-                        {index < abilities.length - 1 ? ", " : ""}
-                      </ul>
-                    ))}
+                    <span>
+                      {abilities.map((ability: any, index: any) => (
+                        <ul key={index} className="font-semibold">
+                          {" "}
+                          {ability.ability.name}
+                          {index < abilities.length - 1 ? ", " : ""}
+                        </ul>
+                      ))}
+                    </span>
                   </p>
                 </div>
               </TabsContent>
