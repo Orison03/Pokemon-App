@@ -116,7 +116,7 @@ export const Card = ({
                 <h2 className="font-description font-semibold text-2xl pt-2">
                   Similar
                 </h2>
-                <div className="space-y-4 flex flex-col py-3 mt-3 mb-20 bg-gradient-to-r from-[#D9D9D9] to-[#D9D9D9]/30 w-[428px] mx-auto"></div>
+                {/* <div className="space-y-4 flex flex-col py-3 mt-3 mb-20 bg-gradient-to-r from-[#D9D9D9] to-[#D9D9D9]/30 w-[428px] mx-auto"></div> */}
               </TabsContent>
               <TabsList>
                 <TabsTrigger

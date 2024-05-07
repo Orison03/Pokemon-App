@@ -180,7 +180,7 @@ const ListView: React.FC = () => {
             type="text"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            placeholder="Enter pokemon name"
+            placeholder="Enter pokemon name..."
             className="font-description max-sm:text-sm text-lg flex-grow bg-transparent focus:outline-none"
           />
         </div>
