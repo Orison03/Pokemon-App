@@ -17,6 +17,10 @@ module.exports = {
       },
     },
     extend: {
+      backgroundImage: {
+        "gradient-to-r-custom":
+          "linear-gradient(270deg, #FFFFFF 0%, rgba(217, 217, 217, 0.06) 51.04%, #FFFFFF 100%)",
+      },
       fontFamily: {
         title: ["Clash Display", "sans-serif"],
         description: ["General Sans", "sans-serif"],
