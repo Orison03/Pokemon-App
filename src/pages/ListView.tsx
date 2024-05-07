@@ -1,18 +1,6 @@
 import { Link } from "react-router-dom";
 import pokemonLogo from "../assets/pokemon-logo.png";
 import {
-  AlertDialog,
-  AlertDialogAction,
-  AlertDialogCancel,
-  AlertDialogContent,
-  AlertDialogDescription,
-  AlertDialogFooter,
-  AlertDialogHeader,
-  AlertDialogTitle,
-  AlertDialogTrigger,
-} from "@/components/ui/alert-dialog";
-
-import {
   ChevronLeft,
   ChevronRight,
   Ellipsis,
@@ -29,6 +17,8 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import Theme from "@/Theme";
+import useThemeStore from "@/lib/theme";
 
 interface Pokemon {
   name: string;
@@ -83,6 +73,7 @@ const ListView: React.FC = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage, setItemsPerPage] = useState(8);
   const [searchTerm, setSearchTerm] = useState("");
+  const theme = useThemeStore((state) => state.theme);
 
   useEffect(() => {
     const fetchPokemonData = async () => {
@@ -148,7 +139,7 @@ const ListView: React.FC = () => {
             key={i}
             className={`px-4 py-2 m-1 font-medium rounded-[8px] ${
               currentPage === i
-                ? "bg-[#E85382] text-white font-medium"
+                ? `bg-${theme} text-white font-medium`
                 : "bg-gray-200 font-medium"
             }`}
             onClick={() => handlePageChange(i)}
@@ -179,7 +170,10 @@ const ListView: React.FC = () => {
                 className="w-[50px] h-auto lg:h-[60px] lg:w-[80px] bg-cover"
               />
               <h2 className="hidden md:block md:text-lg lg:text-2xl font-semibold font-title tracking-tight py-3">
-                Poké <span className="text-[#E85382]">book</span>
+                Poké{" "}
+                <span className={`bg-${theme} px-2 rounded-md text-white`}>
+                  book
+                </span>
               </h2>
             </div>
           </Link>
@@ -196,27 +190,7 @@ const ListView: React.FC = () => {
             className="font-description max-sm:text-sm text-lg flex-grow bg-transparent focus:outline-none"
           />
         </div>
-        {/* theme component */}
-        <AlertDialog>
-          <AlertDialogTrigger>
-            <div className="w-8 h-8 lg:w-12 lg:h-12 border border-[#868686] rounded-full flex items-center justify-center">
-              <div className="w-6 h-6 lg:w-8 lg:h-8 bg-[#E85382] rounded-full"></div>
-            </div>
-          </AlertDialogTrigger>
-          <AlertDialogContent>
-            <AlertDialogHeader>
-              <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
-              <AlertDialogDescription>
-                This action cannot be undone. This will permanently delete your
-                account and remove your data from our servers.
-              </AlertDialogDescription>
-            </AlertDialogHeader>
-            <AlertDialogFooter>
-              <AlertDialogCancel>Cancel</AlertDialogCancel>
-              <AlertDialogAction>Continue</AlertDialogAction>
-            </AlertDialogFooter>
-          </AlertDialogContent>
-        </AlertDialog>
+        <Theme />
       </nav>
 
       <div className="pt-24 pb-16 px-10">
@@ -263,7 +237,7 @@ const ListView: React.FC = () => {
             <button
               className={`p-2 m-1 rounded-[8px] ${
                 currentPage === totalPages
-                  ? "bg-[#E85382] text-white"
+                  ? `bg-${theme} text-white`
                   : "bg-gray-200"
               }`}
               onClick={() => handlePageChange(currentPage + 1)}

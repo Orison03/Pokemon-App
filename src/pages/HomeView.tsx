@@ -2,8 +2,10 @@ import pokemonLogo from "../assets/pokemon-logo.png";
 import pokemonImageBg from "../assets/pokemon-bg-image.jpg";
 import { Search } from "lucide-react";
 import { Link } from "react-router-dom";
+import useThemeStore from "@/lib/theme";
 
 export default function HomeView() {
+  const theme = useThemeStore((state) => state.theme);
   return (
     <section className="h-screen w-screen bg-cover bg-center relative flex justify-center items-center">
       {/* background logo for home view */}
@@ -22,7 +24,8 @@ export default function HomeView() {
         />
         {/* title */}
         <h2 className="text-4xl lg:text-5xl font-semibold font-title tracking-tight py-3">
-          Poké <span className="text-pink-500">book</span>
+          Poké{" "}
+          <span className={`bg-${theme} text-white px-4 rounded-md`}>book</span>
         </h2>
         {/* description */}
         <p className="mx-auto w-[370px] text-black font-description font-normal text-lg">
@@ -31,13 +34,13 @@ export default function HomeView() {
         </p>
         {/* search bar */}
         <Link to="/list-view">
-          <div className="flex justify-between border-2 rounded-[30px] py-2 bg-white pr-[9px] pl-[20px] mt-16 border-[#DE527F] w-[340px] lg:w-[536px] mx-auto cursor-pointer items-center">
+          <div className="flex justify-between border-2 rounded-[30px] py-2 bg-white pr-[9px] pl-[20px] mt-16 border-neutral-200 w-[340px] lg:w-[536px] mx-auto cursor-pointer items-center">
             <input
               type=""
               placeholder="Enter pokemon name"
               className="font-description text-lg text-[#7B7B7B] flex-grow bg-transparent focus:outline-none cursor-pointer"
             />
-            <div className="bg-[#DE527F] p-[14px] rounded-full gap-2">
+            <div className={`bg-${theme} p-[14px] rounded-full gap-2`}>
               <Search className="text-white" />
             </div>
           </div>

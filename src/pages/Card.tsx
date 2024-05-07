@@ -3,6 +3,7 @@ import { Eye } from "lucide-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Separator } from "@/components/ui/separator";
 import { Progress } from "@/components/ui/progress";
+import useThemeStore from "@/lib/theme";
 
 interface cardProp {
   name: string;
@@ -21,6 +22,7 @@ export const Card = ({
   abilities,
   stats,
 }: cardProp) => {
+  const theme = useThemeStore((state) => state.theme);
   return (
     <div className="flex flex-col items-center justify-center bg-white rounded-[20px] p-2 group cursor-pointer">
       <div className="bg-gray-100/45 w-full flex justify-center items-center rounded-[15px]">
@@ -36,7 +38,9 @@ export const Card = ({
       <Sheet>
         <SheetTrigger className="w-full">
           <div className="opacity-0 group-hover:opacity-100 h-0 group-hover:h-auto py-3 transition-opacity duration-200 ease-in-out">
-            <div className="flex justify-between items-center  py-3 px-5 bg-[#E85382] text-white rounded-[14px]">
+            <div
+              className={`flex justify-between items-center  py-3 px-5 bg-${theme} text-white rounded-[14px]`}
+            >
               <p className="font-description">View Pokemon</p>
               <Eye />
             </div>
