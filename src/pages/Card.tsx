@@ -106,7 +106,11 @@ export const Card = ({
                       className="font-normal max-sm:text-lg text-xl border-b border-[#D9D9D9] py-3 flex items-center justify-between space-x-3 text-nowrap px-4"
                     >
                       <span>{stat.stat.name.toUpperCase()}</span>
-                      <Progress value={(stat.base_stat / 255) * 100} />
+                      <Progress
+                        className={`bg-${theme}`}
+                        value={(stat.base_stat / 255) * 100}
+                      />
+                      <span className="font-semibold">{stat.base_stat}</span>
                     </p>
                   ))}
                 </div>
